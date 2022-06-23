@@ -1,6 +1,8 @@
 package desafio1;
 
-public class ContaPoupanca extends Conta{
+import desafio2.Imposto;
+
+public class ContaPoupanca extends Conta implements Imposto {
 
     public ContaPoupanca() {
     }
@@ -12,5 +14,10 @@ public class ContaPoupanca extends Conta{
     @Override
     public double rendimento() {
         return saldo * 0.05;
+    }
+
+    @Override
+    public Double calcularImposto() {
+        return rendimento() * 0.10;
     }
 }
